@@ -1,0 +1,47 @@
+variant: fcos
+version: 1.5.0
+
+storage:
+  files:
+    - path: /etc/caddy/Caddyfile
+      contents:
+        local: files/Caddyfile
+      mode: 0644
+    - path: /etc/containers/systemd/web.pod
+      contents:
+        local: files/web.pod
+      mode: 0644
+    - path: /etc/containers/systemd/staging.container
+      contents:
+        local: files/staging.container
+      mode: 0644
+    - path: /etc/containers/systemd/live.container
+      contents:
+        local: files/live.container
+      mode: 0644
+    - path: /etc/containers/systemd/caddy.container
+      contents:
+        local: files/caddy.container
+      mode: 0644
+
+systemd:
+  units:
+    - name: podman-auto-update.timer
+      enabled: true
+      dropins:
+        - name: update-hourly.conf
+          contents_local: files/update-hourly.conf
+    - name: quadlet-reload.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=Reload systemd to pick up Quadlet units
+        After=network-online.target
+        Wants=network-online.target
+
+        [Service]
+        Type=oneshot
+        ExecStart=/usr/bin/systemctl daemon-reload
+
+        [Install]
+        WantedBy=multi-user.target

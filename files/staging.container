@@ -1,0 +1,12 @@
+[Container]
+ContainerName=staging
+Pod=web.pod
+Image=ams.vultrcr.com/lthms/www/soap.coffee:staging
+Label=io.containers.autoupdate=registry
+Environment=SOAP_COFFEE_PORT=8080
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

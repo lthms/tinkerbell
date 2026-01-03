@@ -1,0 +1,11 @@
+[Container]
+ContainerName=caddy
+Pod=web.pod
+Image=docker.io/caddy:2
+Volume=/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

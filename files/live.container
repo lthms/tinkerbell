@@ -1,0 +1,13 @@
+[Container]
+ContainerName=live
+Pod=web.pod
+Image=ams.vultrcr.com/lthms/www/soap.coffee:live
+Label=io.containers.autoupdate=registry
+Environment=SOAP_COFFEE_PORT=8081
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
