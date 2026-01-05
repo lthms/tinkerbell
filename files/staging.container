@@ -4,6 +4,7 @@ Pod=web.pod
 Image=ams.vultrcr.com/lthms/www/soap.coffee:staging
 Label=io.containers.autoupdate=registry
 Environment=SOAP_COFFEE_PORT=8080
+Environment=SOAP_COFFEE_STAGING=yes
 
 [Service]
 Restart=always
