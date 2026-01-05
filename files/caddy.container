@@ -3,6 +3,8 @@ ContainerName=caddy
 Pod=web.pod
 Image=docker.io/caddy:2
 Volume=/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+Volume=caddy-data:/data
+Volume=caddy-config:/config
 
 [Service]
 Restart=always
