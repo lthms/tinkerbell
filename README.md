@@ -14,7 +14,7 @@ explaining this architecture in depth.
 - Terraform
 - Butane
 - Vultr API key
-- A `main.tfvars` file with `vultr_api_key = "..."`
+- A `main.tfvars.json` file to define `vultr_api_key`
 
 ## Usage
 
