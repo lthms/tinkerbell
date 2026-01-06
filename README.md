@@ -19,8 +19,9 @@ explaining this architecture in depth.
 ## Usage
 
 1. Generate the Ignition config with `make main.ign`
-2. Apply the Terraform plan with `terraform apply -var-file=main.tfvars`
-3. For subsequent deployments, simply call `make deploy`
+2. Apply the Terraform plan with `make`
+3. For subsequent deployments, simply call `make` again, but you can also use
+   `make force` to replace the VM even if the Ignition config has not changed
 
 **Note:** to deploy this setup yourself, you will need to modify the Caddyfile
 to use your own domain name.
