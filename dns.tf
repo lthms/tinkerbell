@@ -1,5 +1,9 @@
 resource "vultr_dns_domain" "public" {
   domain = var.domain
+
+  lifecycle {
+    prevent_destroy = true
+ }
 }
 
 resource "vultr_dns_record" "live" {
