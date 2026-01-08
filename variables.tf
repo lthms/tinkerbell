@@ -4,3 +4,8 @@ variable "vultr_api_key" {
   sensitive = true
 }
 
+variable "domain" {
+  type = string
+  description = "Website public domain"
+  sensitive = false
+}
