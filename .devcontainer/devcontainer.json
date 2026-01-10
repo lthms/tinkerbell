@@ -1,0 +1,9 @@
+{
+  "name": "tinkerbell-devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "postCreateCommand": "mise trust -y && mise install -y",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/mise:1": {}
+  },
+  "runArgs": ["--network=host"]
+}

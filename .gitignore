@@ -3,4 +3,4 @@ main.ign
 terraform.*
 .terraform*
 *.tfvars
-*.tfvars.json
+mise.local.toml

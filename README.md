@@ -15,7 +15,7 @@ architecture in depth.
 
 - `mise`
 - Vultr API key
-- `main.tfvars.json` file to define `vultr_api_key` and `domain`
+- `main.tfvars` file to define `vultr_api_key` and `domain`
 
 ## Usage
 

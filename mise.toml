@@ -1,5 +1,5 @@
 [tools]
 "terraform" = "1.14.3"
-"jq" = "1.8.1"
+"yq" = "4.50.1"
 "github:coreos/butane" = "0.25.1"
 "github:cbroglie/mustache" = "1.4.0"
