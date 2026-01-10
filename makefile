@@ -1,9 +1,8 @@
 TEMPLATES = $(wildcard files/*.mustache)
 FILES = $(wildcard files/*) $(TEMPLATES:.mustache=)
-MUSTACHE = npx --yes mustache@4.2.0 main.tfvars.json
 
 %: %.mustache
-	$(MUSTACHE) $< > $@
+	mustache main.tfvars.json $< > $@
 
 .PHONY: deploy
 deploy: main.ign

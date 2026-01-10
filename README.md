@@ -13,17 +13,13 @@ architecture in depth.
 
 ## Prerequisites
 
-- Terraform
-- Butane
+- `mise`
 - Vultr API key
-- A `main.tfvars.json` file to define `vultr_api_key`
+- `main.tfvars.json` file to define `vultr_api_key` and `domain`
 
 ## Usage
 
-1. Generate the Ignition config with `make main.ign`
-2. Apply the Terraform plan with `make`
-3. For subsequent deployments, simply call `make` again, but you can also use
-   `make force` to replace the VM even if the Ignition config has not changed
-
-**Note:** to deploy this setup yourself, you will need to modify the Caddyfile
-to use your own domain name.
+1. `mise install` to get the necessary dev tools (`terraform`, `jq`,
+   `mustache`, `butane`)
+2. `make plan` to see what changes can be deployed
+3. `make` to deploy
